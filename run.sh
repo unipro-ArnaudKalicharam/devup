@@ -4,8 +4,8 @@ echo "********************************"
 echo "* Setting up git authentication."
 echo "********************************"
 
-read -s "Please enter your git email: " gitemail
-read -s -p "Enter a passphrase - leave empty for no passphrase: " passphrase
+read -p "Please enter your git email: " gitemail
+read -sp "Enter a passphrase - leave empty for no passphrase: " passphrase
 
 # Generate an SSH key without passphrase.
 yes y | ssh-keygen -t rsa -N "${passphrase}" -b 4096 -C "${gitemail}" -f ~/.ssh/id_rsa
